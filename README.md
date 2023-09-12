@@ -20,3 +20,9 @@
 | Задание 13 | + |
 | Задание 14 | + |
 | Задание 15 | + |
+2.1.Установка Tema_1
+![2 1 Установка Tema_1](https://github.com/Mikhail867/Software_Engineering/assets/144737787/185c959f-0f6b-4acb-a88e-17de02b507d6)
+2.2.Настройка Tema_1
+![2 2 Настройка Tema_1](https://github.com/Mikhail867/Software_Engineering/assets/144737787/8bcb8f5c-a090-47f5-a228-e1f69530296f)
+2.3.Создание нового репозитория Tema_1
+![2 3 Создание нового репозитория Tema_1](https://github.com/Mikhail867/Software_Engineering/assets/144737787/5a2f88c4-f0c2-4588-859f-0c4a74c830b1)
