@@ -21,20 +21,24 @@
 
 
   ```python
-
+Hello students
+How are you?
 ```
   ### Результат
   
- 
+ ![1](https://github.com/Mikhail867/Software_Engineering/assets/144737787/0cdd0a7a-cd3a-4686-8cc3-1f5b28454c9c)
+
 ## Краткий вывод:
 
-
+Мы написали текстовый файл в директрии программы 
 
    ## Лабараторная работа 2
 
 
   ```python
-
+f=  open("input.txt", "r")
+print(f.readline())
+f.close()
 ```
   ### Результат
   
