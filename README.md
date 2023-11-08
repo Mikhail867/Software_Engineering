@@ -171,13 +171,26 @@ print_docs(" glush\Desktop\library")
 
 
   ```python
+def longest_words(file):
+    with open(file, encoding = "utf-8") as f:
+        words = f.read().split()
+        max_length = len(max(words,key=len))
+        for word in words:
+            if len(word)== max_length:
+                sought_words = word
 
+        if len(sought_words)== 1:
+            return sought_words[0]
+        return sought_words
+
+print(longest_words("input.txt"))
 ```
   ### Результат
-  
+  ![9](https://github.com/Mikhail867/Software_Engineering/assets/144737787/1a5c6ae7-3dfb-4408-b551-e8c155e9f1d5)
+
  
 ## Краткий вывод:
-
+Этот код читает содержимое файла "input.txt", разбивает его на слова и находит самые длинные слова в файле. 
 
 
    ## Лабараторная работа 10
