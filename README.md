@@ -1,6 +1,6 @@
-# Тема 4. Функции и модули 
-Отчет по Теме #4 выполнил(а):
-- Глушков Михамл Сергеевич
+# Тема 8. Введение в ООП
+Отчет по Теме #8 выполнил(а):
+- Глушков Михаил Сергеевич
 - ПИЭ-21-1
 
 | Задание | Лаб_раб | Сам_раб |
@@ -10,11 +10,11 @@
 | Задание 3 | + | + |
 | Задание 4 | + | + |
 | Задание 5 | + | + |
-| Задание 6 | + | |
-| Задание 7 | + | |
-| Задание 8 | + |  |
-| Задание 9 | + |  |
-| Задание 10 | + |  |
+| Задание 6 |  | |
+| Задание 7 |  | |
+| Задание 8 |  |  |
+| Задание 9 |  |  |
+| Задание 10 |  |  |
 
 # Лабараторные работы 
    ## Лабараторная работа 1
@@ -212,52 +212,189 @@ print("Circle Area:", circle.area())
 
 
   ```python
+class Animal:
+    def __init__(self, species, sound):
 
+        self.species = species
+        self.sound = sound
+
+    def make_sound(self):
+
+        print(f"The {self.species} makes a {self.sound}!")
+
+
+lion = Animal("Lion", "roar")
+
+
+lion.make_sound()
 ```
   ### Результат
-  
+  ![6](https://github.com/Mikhail867/Software_Engineering/assets/144737787/1bbde53d-c4a1-4979-a47c-66d2ee1c608c)
+
  
 ## Краткий вывод:
+В данном случае, класс Animal представляет различных животных. Конструктор класса принимает два аргумента - species (вид животного) и sound (звук, который оно издает). У класса есть метод make_sound, который выводит звук, издаваемый животным.
+
+После этого создается объект lion (львица) с видом "Lion" и звуком "roar", и вызывается метод make_sound для вывода соответствующего сообщения.
 
   ## Самотоятельная работа 2
 
 
   ```python
+class Animal:
+    def __init__(self, species, sound, color):
 
+        self.species = species
+        self.sound = sound
+        self.color = color
+
+    def make_sound(self):
+
+        print(f"The {self.species} makes a {self.sound}!")
+
+    def introduce(self):
+
+        print(f"I am a {self.color} {self.species}. Listen to my {self.sound}!")
+
+
+lion = Animal("Lion", "roar", "golden")
+
+
+lion.make_sound()
+lion.introduce()
 ```
   ### Результат
-  
+  ![7](https://github.com/Mikhail867/Software_Engineering/assets/144737787/b71412f6-6c14-4a27-960f-6a842a656da9)
+
  
 ## Краткий вывод:
-
+Теперь класс Animal имеет дополнительный атрибут color и метод introduce, который представляет животное, указывая его вид, цвет и издаваемый звук.
   ## Самотоятельная работа 3
 
 
   ```python
+class WildAnimal(Animal):
+    def __init__(self, species, sound, color, habitat):
+        
+        super().__init__(species, sound, color)
+        self.habitat = habitat
 
+    def describe_habitat(self):
+      
+        print(f"I live in the {self.habitat}.")
+
+
+wild_lion = WildAnimal("Lion", "roar", "golden", "African savannah")
+
+
+wild_lion.make_sound()
+wild_lion.introduce()
+wild_lion.describe_habitat()
 ```
   ### Результат
-  
+  ![8](https://github.com/Mikhail867/Software_Engineering/assets/144737787/75241e65-7d57-406d-81cc-08aea51cb3aa)
+
  
 ## Краткий вывод:
+Теперь у нас есть подкласс WildAnimal, который наследует от Animal. Он добавляет новый атрибут habitat (место обитания) и метод describe_habitat, который выводит информацию о месте обитания.
 
   ## Самотоятельная работа 4
 
 
   ```python
+class Animal:
+    def __init__(self, species, sound, color):
 
+        self.species = species
+        self.__sound = sound
+        self.color = color
+
+    def make_sound(self):
+
+        print(f"The {self.species} makes a {self.__sound}!")
+
+    def introduce(self):
+
+        print(f"I am a {self.color} {self.species}. Listen to my {self.__sound}!")
+
+    def get_sound(self):
+
+        return self.__sound
+
+    def set_sound(self, new_sound):
+
+        self.__sound = new_sound
+
+
+lion = Animal("Lion", "roar", "golden")
+
+
+lion.make_sound()
+lion.introduce()
+
+
+current_sound = lion.get_sound()
+print(f"Current sound of the Lion: {current_sound}")
+
+
+lion.set_sound("growl")
+
+
+lion.make_sound()
+lion.introduce()
 ```
   ### Результат
-  
+  ![9](https://github.com/Mikhail867/Software_Engineering/assets/144737787/aee4f54c-62b2-4ef8-8a4d-53dda4787c5c)
+
  
 ## Краткий вывод:
+В этой версии кода атрибут sound инкапсулирован, делая его приватным (__sound). Добавлены методы get_sound и set_sound для получения и установки значения этого атрибута соответственно.
 
   ## Самотоятельная работа 5
 
 
   ```python
+class Pet:
+    def make_sound(self):
 
+        pass
+
+
+class Dog(Pet):
+    def make_sound(self):
+
+        print("Woof! Woof!")
+
+
+class Cat(Pet):
+    def make_sound(self):
+
+        print("Meow! Meow!")
+
+
+my_dog = Dog()
+my_cat = Cat()
+
+
+my_dog.make_sound()
+my_cat.make_sound()
 ```
   ### Результат
+  ![10](https://github.com/Mikhail867/Software_Engineering/assets/144737787/285ef2a8-8bfa-404d-90e8-5ccb52cfc492)
+  ## Краткий вывод:
+  В этом примере мы создали базовый класс Pet, который содержит метод make_sound, а затем определили два подкласса: Dog и Cat, которые наследуют от Pet и переопределяют метод make_sound для представления звука собаки и кошки соответственно.
+  # Общий вывод:
+  Введение в объектно-ориентированное программирование (ООП) представляет собой ключевой аспект в разработке программного обеспечения, который позволяет структурировать код вокруг объектов, представляющих реальные сущности, а также использовать концепции наследования, инкапсуляции и полиморфизма для создания более гибкого и понятного кода.
+
+ООП базируется на следующих принципах:
+
+Инкапсуляция: Скрывает внутреннюю реализацию объектов и предоставляет интерфейс для их взаимодействия. Атрибуты и методы объединяются в классы, что облегчает поддержку кода и сокрытие деталей реализации.
+
+Наследование: Позволяет создавать новые классы на основе существующих, наследуя их атрибуты и методы. Это снижает дублирование кода и улучшает структуру программы.
+
+Полиморфизм: Объекты разных классов могут обладать одинаковым интерфейсом, что позволяет использовать их взаимозаменяемо. Полиморфизм упрощает кодирование и повышает его гибкость.
+
+ООП применяется для более эффективной организации кода, улучшения его читаемости, уменьшения сложности программ и обеспечения повторного использования кода. Он позволяет моделировать реальные объекты и их взаимодействие, что делает разработку программ более интуитивной и эффективной.
+
   
  
